@@ -1,0 +1,8 @@
+# Compiled executable
+compression
+
+# Object files
+*.o
+
+# macOS
+.DS_Store
