@@ -2,7 +2,7 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-
+#include <unordered_map>
 #include "HuffmanNode.h"
 
 using namespace std;
@@ -35,8 +35,14 @@ int main() {
     }
 
     Node* root = pq.top();
-    generateCodes(root, "");
-    
+    std::unordered_map<unsigned char, std::string> codes;
+    generateCodes(root, "",codes);
+    std::string input = "ABACAB";
+
+    std::string result = encode(input, codes);
+
+    std::cout << "Original: " << input << '\n';
+    std::cout << "Encoded: " << result << '\n';
 
     return 0;
 }

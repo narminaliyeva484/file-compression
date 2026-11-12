@@ -1,5 +1,5 @@
 #include <string>
-
+#include <unordered_map>
 #pragma once
 
 
@@ -25,4 +25,13 @@ struct Compare {
     }
 };
 
-void generateCodes(Node* root, std::string code);
+void generateCodes(
+    Node* root,
+    std::string code,
+    std::unordered_map<unsigned char, std::string>& codes
+);
+
+std::string encode(
+    const std::string& input,
+    const std::unordered_map<unsigned char, std::string>& codes
+);
