@@ -11,15 +11,12 @@ int main() {
 
     // We'll test our Huffman components here.
 
-    Node a('A', 8, nullptr, nullptr);
-    Node b('B', 3, nullptr, nullptr);
-    Node c('C', 2, nullptr, nullptr);
+    Node a('A', 6, nullptr, nullptr);
 
     priority_queue<Node*, vector<Node*>, Compare> pq;
 
     pq.push(&a);
-    pq.push(&b);
-    pq.push(&c);
+    
 
     
     while (pq.size() > 1){
@@ -37,12 +34,13 @@ int main() {
     Node* root = pq.top();
     std::unordered_map<unsigned char, std::string> codes;
     generateCodes(root, "",codes);
-    std::string input = "ABACAB";
+    std::string input = "AAAAAA";
 
-    std::string result = encode(input, codes);
+    std::string encoded = encode(input, codes);
+    std::string decoded = decode(encoded, root);
 
-    std::cout << "Original: " << input << '\n';
-    std::cout << "Encoded: " << result << '\n';
+    std::cout << encoded << '\n';
+    std::cout << decoded << '\n';
 
     return 0;
 }

@@ -35,3 +35,5 @@ std::string encode(
     const std::string& input,
     const std::unordered_map<unsigned char, std::string>& codes
 );
+
+std::string decode(const std::string& encoded, Node* root);
